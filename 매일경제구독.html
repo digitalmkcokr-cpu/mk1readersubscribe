@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 최적화 메타 태그 -->
+    <title>매일경제 구독신청 | 프리미엄 경제 뉴스 정기구독</title>
+    <meta name="description" content="매일경제 구독신청으로 최고의 경제 뉴스를 만나보세요. 다양한 구독 혜택과 특별 할인을 제공합니다. 지금 바로 신청하세요.">
+    <meta name="keywords" content="매일경제 구독신청, 매일경제 신문, 경제신문 구독, 매경 구독, 신문구독">
+    
+    <!-- Open Graph (네이버, 페이스북 등) -->
+    <meta property="og:title" content="매일경제 구독신청 | 프리미엄 경제 뉴스">
+    <meta property="og:description" content="매일경제 구독신청으로 최고의 경제 뉴스를 만나보세요. 다양한 혜택과 특별 할인 제공.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ko_KR">
+    
+    <!-- 구조화된 데이터 (검색엔진 최적화) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "매일경제 구독신청",
+      "description": "매일경제 신문 정기구독 서비스",
+      "brand": {
+        "@type": "Brand",
+        "name": "매일경제"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "KRW"
+      }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #F08300;
+            --secondary-color: #1a1a1a;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #F08300 0%, #d47200 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* 헤더 */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .cta-button-header {
+            background: var(--gradient);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(240, 131, 0, 0.4);
+        }
+
+        /* 히어로 섹션 */
+        .hero {
+            background: var(--gradient);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .cta-button-main {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .cta-button-main:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        /* 혜택 섹션 */
+        .benefits {
+            padding: 6rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+        }
+
+        .benefits-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            line-height: 1.4;
+        }
+
+        .benefit-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* 가격 섹션 */
+        .pricing {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .pricing-grid {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 3px solid var(--primary-color);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(240, 131, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .pricing-badge {
+            background: var(--gradient);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 2rem 0;
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: #666;
+            font-weight: normal;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .pricing-features li:before {
+            content: "✓ ";
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .pricing-button {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .pricing-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(240, 131, 0, 0.4);
+        }
+
+        /* FAQ 섹션 */
+        .faq {
+            padding: 6rem 2rem;
+            background: var(--light-bg);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: #666;
+            line-height: 1.8;
+            display: none;
+        }
+
+        /* 푸터 */
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-cta {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .footer-cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(255,255,255,0.3);
+        }
+
+        .footer-info {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        /* 애니메이션 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div class="header-content">
+            <div class="logo">매일경제 구독신청 사원확장</div>
+            <a href="https://mkservice.mk.co.kr/reader/registration/ContentsRef.do?ref=101224001" class="cta-button-header">지금 구독하기</a>
+        </div>
+    </header>
+
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>매일경제 구독신청 (사원확장)</h1>
+            <p>지금 매일경제를 구독하고, 4가지 혜택을 받아가세요!</p>
+            <a href="https://mkservice.mk.co.kr/reader/registration/ContentsRef.do?ref=101224001" class="cta-button-main">지금 구독신청하기</a>
+        </div>
+    </section>
+
+    <!-- 혜택 섹션 -->
+    <section class="benefits" id="benefits">
+        <h2 class="section-title">매일경제 구독 혜택</h2>
+        <p class="section-subtitle">구독자만을 위한 4가지 파격적인 혜택을 제공해 드립니다!</p>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3>프리미엄 재테크 정보<br>매경엠플러스 무료 제공</h3>
+                <p>매주 2회 심층 분석 기사 및 동영상 메일링 서비스를 해드립니다.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🎫</div>
+                <h3>서울머니쇼 무료 입장 및<br>방문 시 푸짐한 선물</h3>
+                <p>매년 4만 명이 방문하는 국내 최대 재테크 박람회에 무료 입장이 가능합니다.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">📚</div>
+                <h3>청소년 경제·금융신문<br>틴매일경제 배송</h3>
+                <p>틴매일경제 신문을 주 1회 배송해 드립니다.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🤖</div>
+                <h3>AI 검색엔진<br>퍼플렉시티 1년권 무료 제공</h3>
+                <p>퍼플렉시티 12개월 권 이용권을 무료로 드립니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 가격 섹션 -->
+    <section class="pricing" id="pricing">
+        <h2 class="section-title">구독 상품 안내</h2>
+        <p class="section-subtitle">나에게 맞는 상품을 선택하세요</p>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>지면신문 구독</h3>
+                <div class="price">월 25,000원</div>
+                <a href="https://mkservice.mk.co.kr/reader/registration/ContentsRef.do?ref=101224001" class="pricing-button">신청하기</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ 섹션 -->
+    <section class="faq" id="faq">
+        <h2 class="section-title">자주 묻는 질문</h2>
+        <p class="section-subtitle">궁금하신 사항을 확인해보세요</p>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    구독 신청은 어떻게 하나요? <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    페이지 상단의 '지금 구독하기' 버튼을 클릭하시면 구독 신청 페이지로 이동합니다. 간단한 정보 입력 후 결제하시면 즉시 구독이 시작됩니다.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    구독 해지는 언제든 가능한가요? <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    네, 언제든지 구독 해지가 가능합니다. 마이페이지에서 간편하게 해지 신청을 하실 수 있으며, 위약금은 없습니다.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    종이신문 배달 지역은 어디까지인가요? <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    전국 대부분 지역으로 배달이 가능합니다. 구독 신청 시 배달 가능 여부를 확인하실 수 있습니다.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="footer-cta">
+            <h2>지금 바로 구독하고</h2>
+            <p>경제신문 1등 매일경제의 인사이트를 얻어가세요</p>
+            <a href="https://mkservice.mk.co.kr/reader/registration/ContentsRef.do?ref=101224001" class="footer-button">지금 구독신청하기</a>
+        </div>
+        <div class="footer-info">
+            <p>© 2025 Maeil Business Newspaper. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 아코디언
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isVisible = answer.style.display === 'block';
+                
+                document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+                
+                if (!isVisible) {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+
+        // 스크롤 애니메이션
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.benefit-card, .pricing-card, .faq-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
